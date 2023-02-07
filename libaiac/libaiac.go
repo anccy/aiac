@@ -7,13 +7,14 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/fatih/color"
 	"io"
 	"net/http"
 	"os"
 	"path/filepath"
 	"strings"
 	"time"
+
+	"github.com/fatih/color"
 
 	"github.com/adrg/xdg"
 	"github.com/briandowns/spinner"
@@ -135,7 +136,7 @@ func (client *Client) Ask(
 	spin.Stop()
 	killed = true
 
-	fmt.Fprintf(os.Stdout, code)
+	fmt.Fprint(os.Stdout, code)
 	if shouldQuit {
 		return nil
 	}
